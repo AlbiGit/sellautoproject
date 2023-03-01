@@ -1,5 +1,32 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.select import Select
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+from time import sleep
+
+driver = webdriver.Chrome(r"C:\cell\chromedriver.exe")
+
+driver.get("https://www.advantageonlineshopping.com/#/")
+driver.implicitly_wait(10)
+driver.maximize_window()
+
+category = driver.find_element(By.CSS_SELECTOR,"#speakersImg")
+category.click()
+
+speakers = driver.find_elements(By.CLASS_NAME,'imgProduct')
+speakers[0].click()
+
+add = driver.find_element(By.CLASS_NAME,'plus')
+driver.implicitly_wait(10)
+add.click()
+
+cart = driver.find_element(By.NAME, 'save_to_cart')
+cart.click()
+
+driver.back()
+speakers = driver.find_elements(By.CLASS_NAME,'imgProduct')
+speakers[1].click()
+add = driver.find_element(By.CLASS_NAME,'plus')
+add.click()
+add.click()
+cart = driver.find_element(By.NAME, 'save_to_cart')
+cart.click()
+sleep(5)
