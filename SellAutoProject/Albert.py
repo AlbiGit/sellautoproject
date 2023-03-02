@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from time import sleep
+from selenium.webdriver.common.action_chains import ActionChains
 
 driver = webdriver.Chrome(r"C:\cell\chromedriver.exe")
 
@@ -29,4 +30,8 @@ add.click()
 add.click()
 cart = driver.find_element(By.NAME, 'save_to_cart')
 cart.click()
+action = ActionChains(driver)
+menu = driver.find_element(By.ID, 'menuCart')
+action.move_to_element(menu).perform()
+
 sleep(5)
