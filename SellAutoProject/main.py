@@ -1,5 +1,12 @@
 from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.select import Select
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+from Tests import Tests
+from Products import Products
+
+driver = webdriver.Chrome(r"C:\cell\chromedriver.exe")
+
+driver.get("https://www.advantageonlineshopping.com/#/")
+driver.implicitly_wait(10)
+driver.maximize_window()
+
+
+

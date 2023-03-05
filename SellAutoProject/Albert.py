@@ -2,18 +2,6 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from time import sleep
 from selenium.webdriver.common.action_chains import ActionChains
-
-# class Products():
-#     def __init__(self, pnumber):
-#         self.pnumber = pnumber
-#     def findproduct(self):
-#         plist = self.driver.find_elements(By.CLASS_NAME, 'imgProduct')
-#         plist[pnumber].click()
-
-    #
-    # add
-    #
-    # addcart
 def testone():
     driver = webdriver.Chrome(r"C:\cell\chromedriver.exe")
 
@@ -21,15 +9,13 @@ def testone():
     driver.implicitly_wait(10)
     driver.maximize_window()
 
-    category = driver.find_element(By.CSS_SELECTOR,"#speakersImg")
+    category = driver.find_element(By.CSS_SELECTOR, "#speakersImg")
     category.click()
 
-    speakers = driver.find_elements(By.CLASS_NAME,'imgProduct')
+    speakers = driver.find_elements(By.CLASS_NAME, 'imgProduct')
     speakers[0].click()
 
-    # Products.findproduct(0)
-
-    add = driver.find_element(By.CLASS_NAME,'plus')
+    add = driver.find_element(By.CLASS_NAME, 'plus')
     driver.implicitly_wait(10)
     add.click()
 
@@ -38,10 +24,10 @@ def testone():
 
     driver.back()
 
-    speakers = driver.find_elements(By.CLASS_NAME,'imgProduct')
+    speakers = driver.find_elements(By.CLASS_NAME, 'imgProduct')
     speakers[1].click()
 
-    add = driver.find_element(By.CLASS_NAME,'plus')
+    add = driver.find_element(By.CLASS_NAME, 'plus')
     add.click()
     add.click()
 
@@ -59,14 +45,13 @@ def testone():
     pt = qpt[1].text
 
     total = driver.find_element(By.CSS_SELECTOR, 'label.roboto-regular.ng-binding').text
-    sump = int(po[-1:])+int(pt[-1:])
+    sump = int(po[-1:]) + int(pt[-1:])
 
     if int(total[1]) == sump:
         print('v')
     else:
         print('x')
     sleep(3)
-
 def testthree():
     driver = webdriver.Chrome(r"C:\cell\chromedriver.exe")
 
@@ -200,3 +185,69 @@ def testseven():
     sleep(3)
 
 def testnine():
+    driver = webdriver.Chrome(r"C:\cell\chromedriver.exe")
+
+    driver.get("https://www.advantageonlineshopping.com/#/")
+    driver.implicitly_wait(10)
+    driver.maximize_window()
+
+    category = driver.find_element(By.CSS_SELECTOR,"#speakersImg")
+    category.click()
+
+    speakers = driver.find_elements(By.CLASS_NAME,'imgProduct')
+    speakers[0].click()
+
+    add = driver.find_element(By.CLASS_NAME,'plus')
+    driver.implicitly_wait(10)
+    add.click()
+
+    cart = driver.find_element(By.NAME, 'save_to_cart')
+    cart.click()
+
+    driver.back()
+
+    speakers = driver.find_elements(By.CLASS_NAME,'imgProduct')
+    speakers[1].click()
+
+    add = driver.find_element(By.CLASS_NAME,'plus')
+    add.click()
+    add.click()
+
+    cart = driver.find_element(By.NAME, 'save_to_cart')
+    cart.click()
+
+    action = ActionChains(driver)
+    menu = driver.find_element(By.ID, 'menuCart')
+    action.move_to_element(menu).perform()
+
+    checkout = driver.find_elements(By.NAME, 'check_out_btn')
+    checkout[0].click()
+
+    user = driver.find_element(By.NAME, 'usernameInOrderPayment')
+    user.send_keys('Ratlord420')
+
+    upass = driver.find_element(By.NAME, 'passwordInOrderPayment')
+    upass.send_keys('Ratlord420')
+
+    log = driver.find_element(By.ID, 'login_btnundefined')
+    log.click()
+
+    next = driver.find_element(By.ID, 'next_btn')
+    next.click()
+
+    mstcr = driver.find_element(By.NAME, 'masterCredit')
+    mstcr.click()
+
+    pay = driver.find_element(By.ID, 'pay_now_btn_MasterCredit')
+    pay.click()
+
+    action = ActionChains(driver)
+    menu = driver.find_element(By.ID, 'menuCart')
+    action.move_to_element(menu).perform()
+    sleep(1)
+    ecart = driver.find_element(By.CSS_SELECTOR, 'label.center.roboto-medium.ng-scope').text
+    if ecart == 'Your shopping cart is empty':
+        print('v')
+    else:
+        print('x')
+    sleep(3)
