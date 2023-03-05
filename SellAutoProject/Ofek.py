@@ -201,10 +201,10 @@ add.click()
 # click add to cart
 cart = driver.find_element(By.NAME, 'save_to_cart')
 cart.click()
-sleep(1)
+
 # go back
 driver.back()
-sleep(1)
+
 # click on the speaker 2
 speakers = driver.find_elements(By.CLASS_NAME,'imgProduct')
 speakers[1].click()
@@ -218,32 +218,37 @@ add.click()
 # click add to cart
 cart = driver.find_element(By.NAME, 'save_to_cart')
 cart.click()
-sleep(1)
 
 # open cart page
 cart_page=driver.find_element(By.CSS_SELECTOR,"#menuCart")
 cart_page.click()
-sleep(1)
 
 
 # edit speaker 1
 driver.implicitly_wait(50)
-sleep(1)
-edit_1=driver.find_element(By.XPATH,"//tbody/tr[2]/td[6]/span[1]/a[1]")
-sleep(1)
-edit_1.click()
-sleep(1)
-driver.implicitly_wait(50)
+
+edits = driver.find_elements(By.CSS_SELECTOR,"a.edit.ng-scope")
+edits[0].click()
+
 add = driver.find_element(By.CLASS_NAME,'plus')
-sleep(1)
-driver.implicitly_wait(50)
-add.click()
-sleep(1)
+for i in range (4):
+    add.click()
 
 # click add to cart
-driver.implicitly_wait(50)
-add_button=driver.find_element(By.CSS_SELECTOR,"button[name='save_to_cart']")
+add_button = driver.find_element(By.NAME, 'save_to_cart')
 add_button.click()
+
+sleep(1)
+edits = driver.find_elements(By.CSS_SELECTOR,"a.edit.ng-scope")
+edits[1].click()
+
+add = driver.find_element(By.CLASS_NAME,'plus')
+for i in range (3):
+    add.click()
+add_button = driver.find_element(By.NAME, 'save_to_cart')
+add_button.click()
+
+
 sleep(3)
 
 
