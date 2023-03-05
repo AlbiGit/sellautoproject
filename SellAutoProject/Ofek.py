@@ -185,69 +185,66 @@ driver.maximize_window()
 # sleep(5)
 
 ##################################TARGIL6#####################################################
-# # click on category speakers
-# category = driver.find_element(By.CSS_SELECTOR,"#speakersImg")
-# category.click()
-#
-# # click on the speaker 1
-# speakers = driver.find_elements(By.CLASS_NAME,'imgProduct')
-# speakers[0].click()
-#
-# # add 1 to Quantity(total=2)
-# add = driver.find_element(By.CLASS_NAME,'plus')
-# driver.implicitly_wait(10)
-# add.click()
-#
-# # click add to cart
-# cart = driver.find_element(By.NAME, 'save_to_cart')
-# cart.click()
-#
-# # go back
-# driver.back()
-#
-# # click on the speaker 2
-# speakers = driver.find_elements(By.CLASS_NAME,'imgProduct')
-# speakers[1].click()
-#
-# # add 2 to Quantity(total=3)
-# add = driver.find_element(By.CLASS_NAME,'plus')
-# driver.implicitly_wait(10)
-# add.click()
-# add.click()
-#
-# # click add to cart
-# cart = driver.find_element(By.NAME, 'save_to_cart')
-# cart.click()
-# sleep(5)
+# click on category speakers
+category = driver.find_element(By.CSS_SELECTOR,"#speakersImg")
+category.click()
 
-# # open cart page
-# cart_page=driver.find_element(By.CSS_SELECTOR,"#menuCart")
-# cart_page.click()
+# click on the speaker 1
+speakers = driver.find_elements(By.CLASS_NAME,'imgProduct')
+speakers[0].click()
 
-# # random click
-# random_click=driver.find_element(By.CSS_SELECTOR,"span[class='roboto-light ng-binding']")
-# random_click.click()
+# add 1 to Quantity(total=2)
+add = driver.find_element(By.CLASS_NAME,'plus')
+driver.implicitly_wait(10)
+add.click()
 
-# driver.get("https://www.advantageonlineshopping.com/#/shoppingCart")
-# driver.implicitly_wait(50)
-# sleep(3)
-#
-# # edit speaker 1
-# driver.implicitly_wait(50)
-# sleep(3)
-# edit_1=driver.find_element(By.XPATH,"//tbody/tr[2]/td[6]/span[1]/a[1]")
-# sleep(2)
-# edit_1.click()
-# add = driver.find_element(By.CLASS_NAME,'plus')
-# add.click()
-#
-# # click add to cart
-# cart = driver.find_element(By.NAME, 'save_to_cart')
-# driver.implicitly_wait(10)
-# cart.click()
-#
-#
-# sleep(3)
+# click add to cart
+cart = driver.find_element(By.NAME, 'save_to_cart')
+cart.click()
+sleep(1)
+# go back
+driver.back()
+sleep(1)
+# click on the speaker 2
+speakers = driver.find_elements(By.CLASS_NAME,'imgProduct')
+speakers[1].click()
+
+# add 2 to Quantity(total=3)
+add = driver.find_element(By.CLASS_NAME,'plus')
+driver.implicitly_wait(10)
+add.click()
+add.click()
+
+# click add to cart
+cart = driver.find_element(By.NAME, 'save_to_cart')
+cart.click()
+sleep(1)
+
+# open cart page
+cart_page=driver.find_element(By.CSS_SELECTOR,"#menuCart")
+cart_page.click()
+sleep(1)
+
+
+# edit speaker 1
+driver.implicitly_wait(50)
+sleep(1)
+edit_1=driver.find_element(By.XPATH,"//tbody/tr[2]/td[6]/span[1]/a[1]")
+sleep(1)
+edit_1.click()
+sleep(1)
+driver.implicitly_wait(50)
+add = driver.find_element(By.CLASS_NAME,'plus')
+sleep(1)
+driver.implicitly_wait(50)
+add.click()
+sleep(1)
+
+# click add to cart
+driver.implicitly_wait(50)
+add_button=driver.find_element(By.CSS_SELECTOR,"button[name='save_to_cart']")
+add_button.click()
+sleep(3)
 
 
 ##################################TARGIL8#####################################################
@@ -329,39 +326,64 @@ driver.maximize_window()
 
 ##################################TARGIL10#####################################################
 
-# click on the user icon
-usericon=driver.find_element(By.CSS_SELECTOR,"#menuUserSVGPath")
-usericon.click()
-
-# username
-username=driver.find_element(By.XPATH,"//input[@name='username']")
-username.send_keys("ofek12")
-
-# password
-password=driver.find_element(By.XPATH,"//input[@name='password']")
-password.send_keys("Ofek12")
-
-# click sign in
-signin=driver.find_element(By.CSS_SELECTOR,"#sign_in_btnundefined")
-signin.click()
-
-# # click account name
-# accountname=driver.find_elements(By.CSS_SELECTOR,"#hrefUserIcon" )
-# accountname[0].click()
-
-# click my account
-myaccount = driver.find_element(By.CSS_SELECTOR,"#menuUserLink")
-sleep(1)
-myaccount.click()
-driver.implicitly_wait(10)
-# action = ActionChains(driver)
-# action.move_to_element(myaccount).perform()
-menu = driver.find_elements(By.CSS_SELECTOR,'label.option.roboto-medium.ng-scope')
-menu[1].click()
-# #verify logging in
-# if driver.find_element(By.CSS_SELECTOR,".hi-user.containMiniTitle.ng-binding").text=="ofek12":
-#     print("logged in:",(By.CSS_SELECTOR,".hi-user.containMiniTitle.ng-binding").text)
+# # click on the user icon
+# usericon=driver.find_element(By.CSS_SELECTOR,"#menuUserSVGPath")
+# usericon.click()
+#
+# # username
+# username=driver.find_element(By.XPATH,"//input[@name='username']")
+# username.send_keys("ofek12")
+#
+# # password
+# password=driver.find_element(By.XPATH,"//input[@name='password']")
+# password.send_keys("Ofek12")
+#
+# # click sign in
+# signin=driver.find_element(By.CSS_SELECTOR,"#sign_in_btnundefined")
+# signin.click()
+#
+# # # click account name
+# # accountname=driver.find_elements(By.CSS_SELECTOR,"#hrefUserIcon" )
+# # accountname[0].click()
+#
+# # click my account
+# myaccount = driver.find_element(By.CSS_SELECTOR,"#menuUserLink")
+# sleep(1)
+# myaccount.click()
+# driver.implicitly_wait(10)
+# # action = ActionChains(driver)
+# # action.move_to_element(myaccount).perform()
+# menu = driver.find_elements(By.CSS_SELECTOR,'label.option.roboto-medium.ng-scope')
+# menu[1].click()
+#
+#
+# # verify logging in
+# if driver.find_element(By.XPATH,"//h3[normalize-space()='MY ACCOUNT']").text=="MY ACCOUNT":
+#     print("logged in:",driver.find_element(By.XPATH,"//h3[normalize-space()='MY ACCOUNT']").text)
 # else:
-#     print("not logged in",(By.CSS_SELECTOR,".hi-user.containMiniTitle.ng-binding").text)
+#     print("not logged in:",driver.find_element(By.XPATH,"//h3[normalize-space()='MY ACCOUNT']").text)
+#
+# # log out
+# myaccount = driver.find_element(By.CSS_SELECTOR,"#menuUserLink")
+# sleep(1)
+# myaccount.click()
+# driver.implicitly_wait(10)
+# menu2 = driver.find_elements(By.XPATH,"//label[@role='link'][normalize-space()='Sign out']")
+# menu2[0].click()
+#
+#
+# # verify logged out
+# usericon=driver.find_element(By.CSS_SELECTOR,"#menuUserSVGPath")
+# sleep(3)
+# usericon.click()
+# sleep(4)
+# driver.implicitly_wait(10)
+# # print(driver.find_element(By.CSS_SELECTOR,".displayed").text)
+# if driver.find_element(By.CSS_SELECTOR,".displayed").text=="Username":
+#     print(driver.find_element(By.CSS_SELECTOR,".displayed").text)
+# else:
+#     print("not logged out")
+
+
 
 sleep(3)
