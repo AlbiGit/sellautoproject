@@ -329,39 +329,39 @@ driver.maximize_window()
 
 ##################################TARGIL10#####################################################
 
-# # click on the user icon
-# usericon=driver.find_element(By.CSS_SELECTOR,"#menuUserSVGPath")
-# usericon.click()
-#
-# # username
-# username=driver.find_element(By.XPATH,"//input[@name='username']")
-# username.send_keys("ofek12")
-#
-# # password
-# password=driver.find_element(By.XPATH,"//input[@name='password']")
-# password.send_keys("Ofek12")
-#
-# # click sign in
-# signin=driver.find_element(By.CSS_SELECTOR,"#sign_in_btnundefined")
-# signin.click()
-#
+# click on the user icon
+usericon=driver.find_element(By.CSS_SELECTOR,"#menuUserSVGPath")
+usericon.click()
+
+# username
+username=driver.find_element(By.XPATH,"//input[@name='username']")
+username.send_keys("ofek12")
+
+# password
+password=driver.find_element(By.XPATH,"//input[@name='password']")
+password.send_keys("Ofek12")
+
+# click sign in
+signin=driver.find_element(By.CSS_SELECTOR,"#sign_in_btnundefined")
+signin.click()
+
 # # click account name
 # accountname=driver.find_elements(By.CSS_SELECTOR,"#hrefUserIcon" )
 # accountname[0].click()
 
-
-
-
-# # click my account
-# myaccount=driver.find_element(By.CSS_SELECTOR,"a[id='menuUserLink'] label:nth-child(2)")
-# myaccount.click()
-
-
-
+# click my account
+myaccount = driver.find_element(By.CSS_SELECTOR,"#menuUserLink")
+sleep(1)
+myaccount.click()
+driver.implicitly_wait(10)
+# action = ActionChains(driver)
+# action.move_to_element(myaccount).perform()
+menu = driver.find_elements(By.CSS_SELECTOR,'label.option.roboto-medium.ng-scope')
+menu[1].click()
 # #verify logging in
 # if driver.find_element(By.CSS_SELECTOR,".hi-user.containMiniTitle.ng-binding").text=="ofek12":
 #     print("logged in:",(By.CSS_SELECTOR,".hi-user.containMiniTitle.ng-binding").text)
 # else:
 #     print("not logged in",(By.CSS_SELECTOR,".hi-user.containMiniTitle.ng-binding").text)
 
-# sleep(3)
+sleep(3)
