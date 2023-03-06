@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
+from time import sleep
 class Menu():
     def __init__(self, driver:webdriver.Chrome):
         self.driver = driver
@@ -15,6 +16,45 @@ class Menu():
         items = self.driver.find_elements(By.CSS_SELECTOR, 'a:nth-child(1) > label:nth-child(2)')
         for i in range (len(items)):
             total += int(items[i].text[-1:])
+    def get_cart_total(self):
+        carttotal = self.driver.find_element(By.CSS_SELECTOR, 'span.roboto-medium.cart-total.ng-binding').text
+        carttotal = carttotal.replace(',', '')
+        return float(carttotal[1:])
+    def cart_total_price(self):
+        total = driver.find_element(By.CSS_SELECTOR, 'span.roboto-medium.cart-total.ng-binding').text
+        return total(cartprice[1:])
+    def list_cart(self):
+        cartlist = self.driver.find_elements(By.CSS_SELECTOR, 'tbody:nth-child(1) > tr')
+        return cartlist
+    def remove_cart(self,item:int):
+        remove = self.driver.find_elements(By.CSS_SELECTOR, 'div.removeProduct.iconCss.iconX')
+        removeditem = self.driver.find_element(By.CSS_SELECTOR, 'tbody:nth-child(1) > tr:nth-child(1)').text
+        remove[item-1].click()
+        return removeditem
+    def click_cart(self):
+        cart = self.driver.find_element(By.ID, 'menuCart')
+        cart.click()
+    def edit_item(self,item):
+        item -= 1
+        edit = self.driver.find_elements(By.CSS_SELECTOR, "a.edit.ng-scope")
+        edit[item].click()
+    def cart_quantity(self,item):
+        item -= 1
+        quantity = self.driver.find_elements(By.CSS_SELECTOR, 'td:nth-child(5) > label:nth-child(2)')
+        return quantity[item].text
+    def cart_checkout(self):
+        checkout = self.driver.find_element(By.XPATH, "(//button[@id='checkOutPopUp'])[1]")
+        checkout.click()
 
-    def compate_total_cart(self):
-        total
+    # def cart_name(self):
+    #     name = self.driver.find_element(By.CSS_SELECTOR, 'tbody tr:nth-child(1) td:nth-child(2) a:nth-child(1) h3:nth-child(1)').text
+    #     return name
+    # def cart_price(self):
+    #     price = self.driver.find_element(By.CSS_SELECTOR, 'div:nth-child(2) > h2:nth-child(2)').text
+    #     return price
+    # def cart_colour(self):
+    #     colour = self.driver.find_element(By.CSS_SELECTOR, 'div:nth-child(1) > div:nth-child(2) > span:nth-child(2)')
+    #     return colour
+    # def cart_quantity(self):
+    #     quantity = self.driver.find_element(By.CLASS_NAME, 'tbody tr:nth-child(1) td:nth-child(2) a:nth-child(1) h3:nth-child(1)').text
+    #     return quantity
