@@ -7,7 +7,6 @@ class Tests():
     def __init__(self, driver:webdriver.Chrome):
         self.driver = driver
     def one(self):
-        Categories.speakers(self)
 
         # speakers = driver.find_elements(By.CLASS_NAME, 'imgProduct')
         # speakers[0].click()
@@ -15,12 +14,12 @@ class Tests():
         # add = driver.find_element(By.CLASS_NAME, 'plus')
         # driver.implicitly_wait(10)
         # add.click()
-        #
+
         # cart = driver.find_element(By.NAME, 'save_to_cart')
         # cart.click()
-        #
-        # driver.back()
-        #
+
+        driver.back()
+
         # speakers = driver.find_elements(By.CLASS_NAME, 'imgProduct')
         # speakers[1].click()
         #
@@ -30,25 +29,25 @@ class Tests():
         #
         # cart = driver.find_element(By.NAME, 'save_to_cart')
         # cart.click()
-        #
+
         # action = ActionChains(driver)
         # menu = driver.find_element(By.ID, 'menuCart')
         # action.move_to_element(menu).perform()
-        #
+
         # qpo = driver.find_elements(By.CSS_SELECTOR, ' a:nth-child(1) > label:nth-child(2)')
         # po = qpo[0].text
         #
         # qpt = driver.find_elements(By.CSS_SELECTOR, ' a:nth-child(1) > label:nth-child(2)')
         # pt = qpt[1].text
-        #
-        # total = driver.find_element(By.CSS_SELECTOR, 'label.roboto-regular.ng-binding').text
-        # sump = int(po[-1:]) + int(pt[-1:])
-        #
-        # if int(total[1]) == sump:
-        #     print('v')
-        # else:
-        #     print('x')
-        # sleep(3)
+
+        total = driver.find_element(By.CSS_SELECTOR, 'label.roboto-regular.ng-binding').text
+        sump = int(po[-1:]) + int(pt[-1:])
+
+        if int(total[1]) == sump:
+            print('v')
+        else:
+            print('x')
+        sleep(3)
 
     def two(self):
         driver = webdriver.Chrome(r"C:\cell\chromedriver.exe")
