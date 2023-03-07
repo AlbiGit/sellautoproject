@@ -21,13 +21,12 @@ class Products():
     def product_cart(self):
         cart = self.driver.find_element(By.NAME, 'save_to_cart')
         cart.click()
-    def product_name(self):
-        name = self.driver.find_element(By.CSS_SELECTOR, '.roboto-regular.screen768.ng-binding').text
-        return name
+    # def product_name(self):
+    #     name = self.driver.find_element(By.CSS_SELECTOR, '.roboto-regular.screen768.ng-binding').text
+    #     return name
     def product_price(self):
         price = self.driver.find_element(By.CSS_SELECTOR, 'div:nth-child(2) > h2:nth-child(2)').text
         price = price.replace(',', '')
         return float(price[1:])
     # def product_colour(self):
-    #     colour = self.driver.find_element(By.CSS_SELECTOR, 'div:nth-child(1) > div:nth-child(2) > span:nth-child(2)')
-    #     return colour
+    #     colour = self.driver.find_elements(By.XPATH,)

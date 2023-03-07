@@ -482,120 +482,120 @@ class Tests():
         # checkout_button.click()
 
         # username
-        username = driver.find_element(By.XPATH, "//input[@name='usernameInOrderPayment']")
-        username.send_keys("ofek12")
+        # username = driver.find_element(By.XPATH, "//input[@name='usernameInOrderPayment']")
+        # username.send_keys("ofek12")
+        #
+        # # password
+        # password = driver.find_element(By.XPATH, "//input[@name='passwordInOrderPayment']")
+        # password.send_keys("Ofek12")
+        #
+        # # click login
+        # driver.implicitly_wait(10)
+        # login = driver.find_element(By.CSS_SELECTOR, "#login_btnundefined")
+        # login.click()
+        #
+        # # click next
+        # next = driver.find_element(By.CSS_SELECTOR, "#next_btn")
+        # next.click()
+        #
+        # # SafePay username
+        # safepayuser = driver.find_element(By.CSS_SELECTOR, "input[name='safepay_username']")
+        # safepayuser.send_keys("ofek12")
+        #
+        # # SafePay password
+        # safepaypassword = driver.find_element(By.CSS_SELECTOR, "input[name='safepay_password']")
+        # safepaypassword.send_keys("Ofek12")
+        #
+        # # check if order completed
+        # driver.implicitly_wait(10)
+        # if driver.find_element(By.XPATH, "//h3[normalize-space()='ORDER PAYMENT']").text == "ORDER PAYMENT":
+        #     print('verify text:', driver.find_element(By.XPATH, "//h3[normalize-space()='ORDER PAYMENT']").text)
+        # else:
+        #     print("error:")
+        #
+        # # open cart page
+        # cart_page = driver.find_element(By.CSS_SELECTOR, "#menuCart")
+        # cart_page.click()
+        #
+        # # check that the cart is empty
+        # if driver.find_element(By.CSS_SELECTOR, ".roboto-bold.ng-scope").text == 'Your shopping cart is empty':
+        #     print('verify text:', driver.find_element(By.CSS_SELECTOR, ".roboto-bold.ng-scope").text)
+        # else:
+        #     print("cart is not empty:", driver.find_element(By.CSS_SELECTOR, ".roboto-bold.ng-scope").text)
+        #
+        # # click the user icon
+        # usericon = driver.find_element(By.CSS_SELECTOR, ".hi-user.containMiniTitle.ng-binding")
+        # username.click(driver.find_element(By.XPATH, "(//label[@role='link'][normalize-space()='My orders'])[1]"))
+        #
+        # sleep(5)
 
-        # password
-        password = driver.find_element(By.XPATH, "//input[@name='passwordInOrderPayment']")
-        password.send_keys("Ofek12")
-
-        # click login
-        driver.implicitly_wait(10)
-        login = driver.find_element(By.CSS_SELECTOR, "#login_btnundefined")
-        login.click()
-
-        # click next
-        next = driver.find_element(By.CSS_SELECTOR, "#next_btn")
-        next.click()
-
-        # SafePay username
-        safepayuser = driver.find_element(By.CSS_SELECTOR, "input[name='safepay_username']")
-        safepayuser.send_keys("ofek12")
-
-        # SafePay password
-        safepaypassword = driver.find_element(By.CSS_SELECTOR, "input[name='safepay_password']")
-        safepaypassword.send_keys("Ofek12")
-
-        # check if order completed
-        driver.implicitly_wait(10)
-        if driver.find_element(By.XPATH, "//h3[normalize-space()='ORDER PAYMENT']").text == "ORDER PAYMENT":
-            print('verify text:', driver.find_element(By.XPATH, "//h3[normalize-space()='ORDER PAYMENT']").text)
-        else:
-            print("error:")
-
-        # open cart page
-        cart_page = driver.find_element(By.CSS_SELECTOR, "#menuCart")
-        cart_page.click()
-
-        # check that the cart is empty
-        if driver.find_element(By.CSS_SELECTOR, ".roboto-bold.ng-scope").text == 'Your shopping cart is empty':
-            print('verify text:', driver.find_element(By.CSS_SELECTOR, ".roboto-bold.ng-scope").text)
-        else:
-            print("cart is not empty:", driver.find_element(By.CSS_SELECTOR, ".roboto-bold.ng-scope").text)
-
-        # click the user icon
-        usericon = driver.find_element(By.CSS_SELECTOR, ".hi-user.containMiniTitle.ng-binding")
-        username.click(driver.find_element(By.XPATH, "(//label[@role='link'][normalize-space()='My orders'])[1]"))
-
-        sleep(5)
-
-    def nine(self):
-        driver = webdriver.Chrome(r"C:\cell\chromedriver.exe")
-
-        driver.get("https://www.advantageonlineshopping.com/#/")
-        driver.implicitly_wait(10)
-        driver.maximize_window()
-
-        category = driver.find_element(By.CSS_SELECTOR, "#speakersImg")
-        category.click()
-
-        speakers = driver.find_elements(By.CLASS_NAME, 'imgProduct')
-        speakers[0].click()
-
-        add = driver.find_element(By.CLASS_NAME, 'plus')
-        driver.implicitly_wait(10)
-        add.click()
-
-        cart = driver.find_element(By.NAME, 'save_to_cart')
-        cart.click()
-
-        driver.back()
-
-        speakers = driver.find_elements(By.CLASS_NAME, 'imgProduct')
-        speakers[1].click()
-
-        add = driver.find_element(By.CLASS_NAME, 'plus')
-        add.click()
-        add.click()
-
-        cart = driver.find_element(By.NAME, 'save_to_cart')
-        cart.click()
-
-        action = ActionChains(driver)
-        menu = driver.find_element(By.ID, 'menuCart')
-        action.move_to_element(menu).perform()
-
-        checkout = driver.find_elements(By.NAME, 'check_out_btn')
-        checkout[0].click()
-
-        user = driver.find_element(By.NAME, 'usernameInOrderPayment')
-        user.send_keys('Ratlord420')
-
-        upass = driver.find_element(By.NAME, 'passwordInOrderPayment')
-        upass.send_keys('Ratlord420')
-
-        log = driver.find_element(By.ID, 'login_btnundefined')
-        log.click()
-
-        next = driver.find_element(By.ID, 'next_btn')
-        next.click()
-
-        mstcr = driver.find_element(By.NAME, 'masterCredit')
-        mstcr.click()
-
-        pay = driver.find_element(By.ID, 'pay_now_btn_MasterCredit')
-        pay.click()
-
-        action = ActionChains(driver)
-        menu = driver.find_element(By.ID, 'menuCart')
-        action.move_to_element(menu).perform()
-        sleep(1)
-        ecart = driver.find_element(By.CSS_SELECTOR, 'label.center.roboto-medium.ng-scope').text
-        if ecart == 'Your shopping cart is empty':
-            print('v')
-        else:
-            print('x')
-        sleep(3)
+    # def nine(self):
+    #     driver = webdriver.Chrome(r"C:\cell\chromedriver.exe")
+    #
+    #     driver.get("https://www.advantageonlineshopping.com/#/")
+    #     driver.implicitly_wait(10)
+    #     driver.maximize_window()
+    #
+    #     category = driver.find_element(By.CSS_SELECTOR, "#speakersImg")
+    #     category.click()
+    #
+    #     speakers = driver.find_elements(By.CLASS_NAME, 'imgProduct')
+    #     speakers[0].click()
+    #
+    #     add = driver.find_element(By.CLASS_NAME, 'plus')
+    #     driver.implicitly_wait(10)
+    #     add.click()
+    #
+    #     cart = driver.find_element(By.NAME, 'save_to_cart')
+    #     cart.click()
+    #
+    #     driver.back()
+    #
+    #     speakers = driver.find_elements(By.CLASS_NAME, 'imgProduct')
+    #     speakers[1].click()
+    #
+    #     add = driver.find_element(By.CLASS_NAME, 'plus')
+    #     add.click()
+    #     add.click()
+    #
+    #     cart = driver.find_element(By.NAME, 'save_to_cart')
+    # #     cart.click()
+    #
+    #     action = ActionChains(driver)
+    #     menu = driver.find_element(By.ID, 'menuCart')
+    #     action.move_to_element(menu).perform()
+    #
+    #     checkout = driver.find_elements(By.NAME, 'check_out_btn')
+    #     checkout[0].click()
+    #
+    #     user = driver.find_element(By.NAME, 'usernameInOrderPayment')
+    #     user.send_keys('Ratlord420')
+    #
+    #     upass = driver.find_element(By.NAME, 'passwordInOrderPayment')
+    #     upass.send_keys('Ratlord420')
+    #
+    #     log = driver.find_element(By.ID, 'login_btnundefined')
+    #     log.click()
+    #
+    #     next = driver.find_element(By.ID, 'next_btn')
+    #     next.click()
+    #
+    #     mstcr = driver.find_element(By.NAME, 'masterCredit')
+    #     mstcr.click()
+    #
+    #     pay = driver.find_element(By.ID, 'pay_now_btn_MasterCredit')
+    #     pay.click()
+    #
+    #     action = ActionChains(driver)
+    #     menu = driver.find_element(By.ID, 'menuCart')
+    #     action.move_to_element(menu).perform()
+    #     sleep(1)
+    #     ecart = driver.find_element(By.CSS_SELECTOR, 'label.center.roboto-medium.ng-scope').text
+    #     if ecart == 'Your shopping cart is empty':
+    #         print('v')
+    #     else:
+    #         print('x')
+    #     sleep(3)
 
     def ten(self):
         driver = webdriver.Chrome(r"C:\cell\chromedriver.exe")
