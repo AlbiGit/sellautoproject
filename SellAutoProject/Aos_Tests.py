@@ -33,14 +33,18 @@ class Aos_unittest(TestCase):
         self.assertEqual(self.menu.get_total(),itemone+itemtwo)
 
     def test_two(self):
-        pass
-        # self.category.category_id(1)
-        # self.driver.implicitly_wait(10)
-        # self.product.cart_product(1,3,1)
-        # self.assertEqual(self.product.product_name(), self.menu.cart_name())
-        # self.assertEqual(self.product.product_quantity(), self.menu.cart_quantity())
-        # self.assertEqual(self.product.product_colour(), self.menu.cart_colour())
-
+        self.category.category_id(1)
+        sleep(3)
+        one = self.product.compare_product_in_cart(1, 2)
+        self.driver.back()
+        two = self.product.compare_product_in_cart(3, 5)
+        self.driver.back()
+        self.driver.back()
+        self.category.category_id(3)
+        three = self.product.compare_product_in_cart(1, 1)
+        self.assertEqual(one,'match')
+        self.assertEqual(two,'match')
+        self.assertEqual(three,'match')
     def test_three(self):
         self.category.category_id(1)
         self.driver.implicitly_wait(10)

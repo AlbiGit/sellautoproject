@@ -42,17 +42,3 @@ class Menu():
     def cart_checkout(self):
         checkout = self.driver.find_element(By.XPATH, "(//button[@id='checkOutPopUp'])[1]")
         checkout.click()
-
-    def cart_name(self):
-        name = self.driver.find_element(By.CSS_SELECTOR, 'tbody tr:nth-child(1) td:nth-child(2) a:nth-child(1) h3:nth-child(1)').text
-        return name
-    def cart_price(self):
-        price = self.driver.find_element(By.CSS_SELECTOR, 'div:nth-child(2) > h2:nth-child(2)').text
-        return price
-    def cart_colour(self):
-        colour = self.driver.find_element(By.CSS_SELECTOR, 'div:nth-child(1) > div:nth-child(2) > span:nth-child(2)')
-        return colour
-    def in_cart_quantity(self,item):
-        item -= 1
-        quantity = self.driver.find_elements(By.CSS_SELECTOR, 'td:nth-child(5) > label:nth-child(2)')
-        return quantity[item].text
