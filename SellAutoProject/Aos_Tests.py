@@ -169,7 +169,7 @@ class Aos_unittest(TestCase):
         track = self.driver.find_element(By.CSS_SELECTOR, "#orderNumberLabel").text
         sleep(1)
         self.user.go_orders()
-        self.driver.implicitly_wait(10)
+        sleep(5)
         torders = self.driver.find_elements(By.CSS_SELECTOR, "tbody>tr>td:nth-of-type(1)>label.ng-binding")
         for i in range (len(torders)):
             if track == torders[i].text:
